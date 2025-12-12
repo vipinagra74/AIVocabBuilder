@@ -152,13 +152,10 @@ const LearningMode: React.FC<LearningModeProps> = ({ grade, gradeGroup, onComple
           }}
         >
           {/* Front Face */}
-          {/* Added z-index logic and moved onClick here to prevent backface scrolling issues */}
           <div 
             className="absolute inset-0 w-full h-full backface-hidden"
             style={{ 
-               zIndex: isFlipped ? 0 : 10,
-               visibility: isFlipped ? 'hidden' : 'visible', // Explicit visibility toggle for robustness
-               transition: 'visibility 0s linear 0.35s' // Delay visibility toggle until halfway through flip
+               zIndex: isFlipped ? 0 : 20,
             }}
             onClick={() => setIsFlipped(true)}
           >
@@ -175,14 +172,11 @@ const LearningMode: React.FC<LearningModeProps> = ({ grade, gradeGroup, onComple
             </div>
           </div>
 
-          {/* Back Face - Fixed Visibility & Scrolling */}
-          {/* Nested the overflow container to prevent WebKit rendering bugs */}
+          {/* Back Face */}
           <div 
             className="absolute inset-0 w-full h-full rotate-y-180 backface-hidden"
             style={{ 
-                zIndex: isFlipped ? 10 : 0,
-                visibility: isFlipped ? 'visible' : 'hidden', // Explicit visibility toggle for robustness
-                transition: 'visibility 0s linear 0.35s'
+                zIndex: isFlipped ? 20 : 0,
             }}
           >
             <div className="w-full h-full bg-white rounded-3xl shadow-xl border-2 border-gray-100 overflow-hidden flex flex-col">
