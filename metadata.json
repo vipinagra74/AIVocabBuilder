@@ -1,0 +1,7 @@
+{
+  "name": "VocabBuilder",
+  "description": "An adaptive, gamified vocabulary learning app for students from Class 1 to 12. Features AI-driven content generation, difficulty adjustment, and age-appropriate UI themes.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
